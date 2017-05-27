@@ -1,4 +1,4 @@
-Couchbase and android useful URLs list:
+Couchbase and android useful URLs:
 
 https://developer.couchbase.com/documentation/mobile/1.2/develop/samples/samples/index.html
 https://www.couchbase.com/downloads#couchbase-mobile
