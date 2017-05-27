@@ -2,6 +2,7 @@ package com.turnon.web.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.turnon.core.common.enums.Gender;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 //TODO FIXME @JsonPropertyOrder({"userId", "firstName", "lastName", "age", "address", "city", "pincode"})
@@ -11,7 +12,8 @@ public class UserProfile {
     private String name;
     private int age;
     private String mobileNumber;
-    private String gender;//TODO FIXME ENUM
+    private Gender gender;
+   
     
     public String getName() {
         return name;
@@ -44,4 +46,16 @@ public class UserProfile {
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+    
+    
+    
+    
 }

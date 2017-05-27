@@ -1,15 +1,18 @@
 package com.turnon.web.model;
 
 import java.time.DayOfWeek;
+import java.util.Arrays;
+import java.util.List;
 
 import org.joda.time.Hours;
 import org.joda.time.Minutes;
 
 import com.google.gson.Gson;
+import com.turnon.core.common.enums.Gender;
 
 public class TestMain {
 
-    public static void main(String[] s){
+	public static void main(String[] s){
         Gson gson = new Gson();
         Session session1 = new Session();
         session1.setStartHour(Hours.hours(10));
@@ -35,19 +38,17 @@ public class TestMain {
         clinic.setTimeSlots(timeSlots);
         
         
-        Clinic[] clinics = new Clinic[1];
-        clinics[0] = clinic;
-        String[] qualifications = {"MBBS","MCH"};
+        List<Clinic> clinics = Arrays.asList(clinic);
+        List<String> qualifications = Arrays.asList("MBBS","MCH");
         DoctorInfo doctorInfo = new DoctorInfo();
         doctorInfo.setRegistrationNo("registrationNoValue");
         doctorInfo.setQualifications(qualifications);
         doctorInfo.setClinics(clinics);
         doctorInfo.setUserId(111111111111111L);
-        doctorInfo.setFirstName("firstNameValue");
-        doctorInfo.setLastName("lastNameValue");
+        doctorInfo.setName("firstNameValue");
         doctorInfo.setAge(10);
-        
+        doctorInfo.setGender(Gender.MALE);
         System.out.println(gson.toJson(doctorInfo));
         
-    }   
+    }
 }

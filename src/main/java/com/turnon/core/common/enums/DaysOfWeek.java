@@ -1,4 +1,4 @@
-package com.turnon.web.model;
+package com.turnon.core.common.enums;
 
 public enum DaysOfWeek {
     SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
