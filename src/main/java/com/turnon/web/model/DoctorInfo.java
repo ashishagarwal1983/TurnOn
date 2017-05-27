@@ -8,7 +8,6 @@ public class DoctorInfo extends UserProfile implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String registrationNo;
-	// TODO FIXME chnage ARRAY
 	private List<String> qualifications;
 	private List<String> specialities;
 	private List<Clinic> clinics;

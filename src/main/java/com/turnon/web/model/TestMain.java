@@ -21,21 +21,17 @@ public class TestMain {
         session1.setEndMinute(Minutes.minutes(0));
         System.out.println(gson.toJson(session1));
         
-        Session[] sessions = new Session[1];
-        sessions[0] = session1;
         TimeSlot timeSlot1 = new TimeSlot();
         timeSlot1.setDay(DayOfWeek.MONDAY);
-        timeSlot1.setSessions(sessions);
+        timeSlot1.setSessions(Arrays.asList(session1));
         System.out.println(gson.toJson(timeSlot1));
         
         Address address = new Address();
         address.setAddressLine1(("SomeDummyAddressVAlue"));
       
-        TimeSlot[] timeSlots = new TimeSlot[1];
-        timeSlots[0] = timeSlot1;
         Clinic clinic = new Clinic();
         clinic.setAddress(address);
-        clinic.setTimeSlots(timeSlots);
+        clinic.setTimeSlots(Arrays.asList(timeSlot1));
         
         
         List<Clinic> clinics = Arrays.asList(clinic);
