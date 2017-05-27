@@ -1,0 +1,11 @@
+Couchbase and android useful URLs:
+
+https://developer.couchbase.com/documentation/mobile/1.2/develop/samples/samples/index.html
+https://www.couchbase.com/downloads#couchbase-mobile
+
+https://github.com/couchbase/couchbase-lite-android
+
+https://github.com/couchbaselabs/GrocerySync-Android
+http://labs.couchbase.com/couchbase-mobile-portal/develop/training/build-first-android-app/add-sync-gateway.xml/index.html
+
+https://developer.couchbase.com/mobile
