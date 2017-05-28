@@ -15,10 +15,10 @@ public class TestMain {
 	public static void main(String[] s){
         Gson gson = new Gson();
         Session session1 = new Session();
-        session1.setStartHour(Hours.hours(10));
-        session1.setStartMinute(Minutes.minutes(15));
-        session1.setEndHour(Hours.hours(1));
-        session1.setEndMinute(Minutes.minutes(0));
+//        session1.setStartHour(Hours.hours(10));
+//        session1.setStartMinute(Minutes.minutes(15));
+//        session1.setEndHour(Hours.hours(1));
+//        session1.setEndMinute(Minutes.minutes(0));
         System.out.println(gson.toJson(session1));
         
         TimeSlot timeSlot1 = new TimeSlot();

@@ -1,59 +1,19 @@
 package com.turnon.web.model;
 
 import java.io.Serializable;
+import java.util.Date;
+
+import com.turnon.core.model.User;
 
 public class Appointment implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
-    private UserProfile userProfile;
-    private String doctorName;   
-    private DoctorInfo doctorInfo;
-    private Integer queueNo;
-    private String status;
-
-    public UserProfile getUserProfile() {
-        return userProfile;
-    }
-
-    public void setUserProfile(UserProfile userProfile) {
-        this.userProfile = userProfile;
-    }
-
-    public String getDoctorName() {
-        return doctorName;
-    }
-
-    public void setDoctorName(String doctorName) {
-        this.doctorName = doctorName;
-    }
-    
-    public DoctorInfo getDoctorInfo() {
-        return doctorInfo;
-    }
-
-    public void setDoctorInfo(DoctorInfo doctorInfo) {
-        this.doctorInfo = doctorInfo;
-    }
-
-    public Integer getQueueNo() {
-        return queueNo;
-    }
-
-    public void setQueueNo(Integer queueNo) {
-        this.queueNo = queueNo;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public static long getSerialversionuid() {
-        return serialVersionUID;
-    }
+	private static final long serialVersionUID = 1L;
+	// This date object will not contain any time value. It will only reprsent a day
+	private Date date;
+	private UserProfile doctorProfile;
+	private UserProfile patientProfile;
+	// This is a tr
+	private HourMinute appointmentTime;
+	private Address address;
 
 }
