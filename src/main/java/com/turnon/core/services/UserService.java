@@ -1,11 +1,9 @@
 package com.turnon.core.services;
 
-import com.turnon.core.model.User;
-import com.turnon.core.model.UserProfile;
-
+import com.turnon.web.model.UserProfile;
 
 public interface UserService {
 
     void registerUser(UserProfile userProfile);
-    User getUserInfoByPhone(String mobile, String category);
+    UserProfile getUserByMobile(String mobile);
 }

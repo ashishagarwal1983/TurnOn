@@ -1,33 +1,39 @@
 package com.turnon.web.controller;
 
+import java.lang.reflect.InvocationTargetException;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
+import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.turnon.core.services.DoctorService;
 import com.turnon.core.services.UserService;
 
 @Path("/users")
 @Produces("application/json")
-public class UsersController {
+public class DoctorController {
     
 	@Autowired
-	private UserService userService;
+	private DoctorService doctorService;
 
-//	@Path("/profile/register")
-//	@POST
-//	public User registerUser(com.turnon.web.model.User user) throws IllegalAccessException, InvocationTargetException{
-//	    com.turnon.core.model.User profile = new com.turnon.core.model.User();
-//	   UserDetails userDetails =  user.getUserDetails();
-//	   com.turnon.core.model.UserDetails model = new com.turnon.core.model.UserDetails();
-//	    BeanUtils.copyProperties(model, userDetails);
-//	    profile.setUserDetails(model);
-//	    profile.setUserId(user.getUserId());
-//	    UserProfile userProfile = new UserProfile();
-//	    userProfile.setFirstName("test");
-//	    userService.registerUser(userProfile);
-//		return user;
-//	}
+	
+	@Path("/test")
+	@GET
+	public String testMethod(){
+		return "Hello World";
+	}
+	
+	@Path("/profile/registerdoctor")
+	@POST
+	public void registerdoctor(com.turnon.web.model.UserProfile userProfile) throws IllegalAccessException, InvocationTargetException{
+//		com.turnon.db.model.DoctorProfile doctorModel = new com.turnon.db.model.DoctorProfile();
+//	    BeanUtils.copyProperties(doctorModel, doctorProfile);
+	    doctorService.registerDoctor(userProfile);
+	}
 	
 //	@Path("/info/{mobile}/{category}")
 //    @GET

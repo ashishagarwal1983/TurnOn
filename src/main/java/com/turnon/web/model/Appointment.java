@@ -3,7 +3,6 @@ package com.turnon.web.model;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.turnon.core.model.User;
 
 public class Appointment implements Serializable {
 

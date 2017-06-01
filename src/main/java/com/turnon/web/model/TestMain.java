@@ -36,7 +36,7 @@ public class TestMain {
         
         List<Clinic> clinics = Arrays.asList(clinic);
         List<String> qualifications = Arrays.asList("MBBS","MCH");
-        DoctorInfo doctorInfo = new DoctorInfo();
+        DoctorProfile doctorInfo = new DoctorProfile();
         doctorInfo.setRegistrationNo("registrationNoValue");
         doctorInfo.setQualifications(qualifications);
         doctorInfo.setClinics(clinics);

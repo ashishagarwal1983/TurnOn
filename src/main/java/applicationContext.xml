@@ -23,32 +23,20 @@
 		<couchbase:node>127.0.0.1</couchbase:node>
 	</couchbase:cluster>
 	<couchbase:clusterInfo login="turnon" password="turnon" />
+	<couchbase:bucket bucketName="default"/>
+	
+	<couchbase:repositories base-package="com.turnon.core.couchbaserepo"/>
 	<bean id="couchbaseEnv"
 		class="com.couchbase.client.java.env.DefaultCouchbaseEnvironment"
 		factory-method="create" />
-	<bean id="myCustomTranslationService"
-		class="org.springframework.data.couchbase.core.convert.translation.JacksonTranslationService" />
+	<!-- <bean id="myCustomTranslationService"
+		class="org.springframework.data.couchbase.core.convert.translation.JacksonTranslationService" /> -->
 	<couchbase:indexManager />
-	
-	<couchbase:repositories base-package="com.turnon1.core.couchbaserepo.*"/>
-	
-	<couchbase:template translation-service-ref="myCustomTranslationService"/>
-	
-	<couchbase:bucket bucketName="default"/>
+	<!-- <couchbase:template translation-service-ref="myCustomTranslationService"/>
+	 -->
 
 	<mvc:annotation-driven />
 	<context:component-scan base-package="com.turnon.*" />
-
-	<!-- <bean id="jsonProvider" class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider" 
-		/> <bean id="userController" class="com.turnon.web.controller.UsersController" 
-		/> -->
-	<!-- <couchbase:cluster> <couchbase:node>127.0.0.1</couchbase:node> </couchbase:cluster> 
-		This is needed to probe the server for N1QL support Can be either cluster 
-		credentials or a bucket credentials <couchbase:clusterInfo login="Administrator" 
-		password="turnon" /> <bean id="couchbaseEnv" class="com.couchbase.client.java.env.DefaultCouchbaseEnvironment" 
-		factory-method="create" /> <bean id="myCustomTranslationService" class="org.springframework.data.couchbase.core.convert.translation.JacksonTranslationService" 
-		/> <couchbase:indexManager /> <couchbase:template translation-service-ref="myCustomTranslationService" 
-		/> <couchbase:bucket bucketName="turnon" bucketPassword="turnon" /> -->
 
 <jaxrs:server id="turnOn" address="/v1">
 	<jaxrs:providers>

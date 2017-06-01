@@ -4,10 +4,17 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
-public class DoctorInfo extends UserProfile implements Serializable {
-	private static final long serialVersionUID = 1L;
+import org.springframework.data.couchbase.core.mapping.Document;
 
+import com.couchbase.client.java.repository.annotation.Field;
+
+@Document
+public class DoctorProfile extends UserProfile implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	@Field
 	private String registrationNo;
+	@Field
 	private List<String> qualifications;
 	private List<String> specialities;
 	private List<Clinic> clinics;
