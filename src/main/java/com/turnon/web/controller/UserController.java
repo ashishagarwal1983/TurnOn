@@ -14,9 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.turnon.core.common.enums.Gender;
 import com.turnon.core.services.UserService;
 import com.turnon.web.model.UserProfile;
+import com.wordnik.swagger.annotations.Api;
+import com.wordnik.swagger.annotations.ApiOperation;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 
 @Path("/user")
 @Api(value = "/user", description = "User REST for Integration Testing")
@@ -28,6 +28,7 @@ public class UserController {
 
 	@Path("/test")
 	@GET
+	@ApiOperation(value = "Get test details")
 	public String testMethod() {
 		UserProfile userProfile = new UserProfile();
 		userProfile.setAge(10);
@@ -44,7 +45,7 @@ public class UserController {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	@ApiOperation(value = "Get user details", response = UserProfile.class)
+	@ApiOperation(value = "Get user details")
 	public void registerUser(com.turnon.web.model.UserProfile userProfile)
 			throws IllegalAccessException, InvocationTargetException {
 		userService.registerUser(userProfile);

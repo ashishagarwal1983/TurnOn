@@ -59,6 +59,10 @@
 		/> <couchbase:bucket bucketName="turnon" bucketPassword="turnon" /> -->
 
 	<jaxrs:server id="turnOn" address="/v1">
+
+		<jaxrs:features>
+			<bean class="org.apache.cxf.jaxrs.swagger.SwaggerFeature" />
+		</jaxrs:features>
 		<jaxrs:providers>
 			<ref bean="jsonProvider" />
 		</jaxrs:providers>
