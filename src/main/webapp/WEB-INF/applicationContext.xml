@@ -17,23 +17,29 @@
 
 
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
-	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" /> 
 	
 	<couchbase:cluster>
 		<couchbase:node>127.0.0.1</couchbase:node>
 	</couchbase:cluster>
-	<couchbase:clusterInfo login="turnon" password="turnon" />
+
+	<!-- This is needed to probe the server for N1QL support -->
+	<!-- Can be either cluster credentials or a bucket credentials -->
+	<couchbase:clusterInfo login="turnon"
+		password="turnon" />
+
 	<bean id="couchbaseEnv"
 		class="com.couchbase.client.java.env.DefaultCouchbaseEnvironment"
 		factory-method="create" />
 	<bean id="myCustomTranslationService"
 		class="org.springframework.data.couchbase.core.convert.translation.JacksonTranslationService" />
+
 	<couchbase:indexManager />
-	
-	<couchbase:repositories base-package="com.turnon1.core.couchbaserepo.*"/>
-	
-	<couchbase:template translation-service-ref="myCustomTranslationService"/>
-	
+
+	<couchbase:repositories base-package="com.turnon.core.repo" />
+
+	<couchbase:template translation-service-ref="myCustomTranslationService" />
+
 	<couchbase:bucket bucketName="default"/>
 
 	<mvc:annotation-driven />

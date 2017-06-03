@@ -6,19 +6,18 @@
 	<artifactId>turnon_v2</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
-
-	<parent>
+	<!-- <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.1.RELEASE</version>
-	</parent>
+	</parent>  -->
 
 	<properties>
 		<project.build.sourceencoding>UTF-8</project.build.sourceencoding>
 		<org.apache.cxf.version>3.0.2</org.apache.cxf.version>
 	</properties>
 	<dependencies>
-		<dependency>
+		 <dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
 			<version>${org.apache.cxf.version}</version>
@@ -51,7 +50,8 @@
 			<artifactId>cglib-nodep</artifactId>
 			<version>2.2</version>
 		</dependency>
-		<dependency>
+		
+		 <!--  <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 		</dependency>
@@ -68,11 +68,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+		</dependency> 
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-		</dependency>
+		</dependency>  -->
 		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-couchbase -->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
@@ -92,9 +92,13 @@
 			<artifactId>joda-time</artifactId>
 			<version>2.8.1</version>
 		</dependency>
+ <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>4.1.9.RELEASE</version>
+</dependency> 
 
-
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 		</dependency>
@@ -103,7 +107,7 @@
 			<artifactId>maven-assembly-plugin</artifactId>
 			<version>3.0.0</version>
 			<type>maven-plugin</type>
-		</dependency>
+		</dependency> -->
 	</dependencies>
 
 	<!-- <build>
