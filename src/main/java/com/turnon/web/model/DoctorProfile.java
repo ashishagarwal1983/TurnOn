@@ -1,7 +1,6 @@
 package com.turnon.web.model;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.data.couchbase.core.mapping.Document;
@@ -16,8 +15,11 @@ public class DoctorProfile extends UserProfile implements Serializable {
 	private String registrationNo;
 	@Field
 	private List<String> qualifications;
+	@Field
 	private List<String> specialities;
+	@Field
 	private List<Clinic> clinics;
+	@Field
 	private String treatmentTime;
 	
 

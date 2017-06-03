@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.turnon.core.repo.UserRepository;
+import com.turnon.core.repo.DoctorRepository;
 import com.turnon.core.services.DoctorService;
 import com.turnon.web.model.DoctorProfile;
 import com.turnon.web.model.UserProfile;
@@ -15,14 +15,18 @@ import com.turnon.web.model.UserProfile;
 public class DoctorServiceImpl implements DoctorService {
 
 	@Autowired
-	UserRepository userRepository;
-	
-	public void registerDoctor(UserProfile userProfile) {
-		userRepository.save(userProfile);
+	DoctorRepository doctorRepository;
+
+	@Override
+	public void registerDoctor(DoctorProfile doctorProfile) {
+		doctorRepository.save(doctorProfile);
 	}
 
+	@Override
 	public List<UserProfile> getDoctorByMobile(String mobile) {
-		return userRepository.findByMobile(mobile);
+		// TODO Auto-generated method stub
+		return null;
 	}
+	
 
 }

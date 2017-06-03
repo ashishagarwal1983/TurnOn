@@ -7,6 +7,6 @@ import com.turnon.web.model.UserProfile;
 
 public interface DoctorService {
 
-	void registerDoctor(UserProfile userProfile);
+	void registerDoctor(DoctorProfile doctorProfile);
 	List<UserProfile> getDoctorByMobile(String mobile);
 }

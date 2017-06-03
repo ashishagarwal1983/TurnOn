@@ -19,13 +19,11 @@ public class UserServiceImpl implements UserService {
 	
 	
 	public void registerUser(UserProfile userProfile) {
-		// TODO Auto-generated method stub
-		
+		userRepository.save(userProfile);
 	}
 
 
 	public UserProfile getUserByMobile(String mobile) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

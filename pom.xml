@@ -6,18 +6,15 @@
 	<artifactId>turnon_v2</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
-	<!-- <parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.1.RELEASE</version>
-	</parent>  -->
+	<!-- <parent> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-parent</artifactId> 
+		<version>1.5.1.RELEASE</version> </parent> -->
 
 	<properties>
 		<project.build.sourceencoding>UTF-8</project.build.sourceencoding>
 		<org.apache.cxf.version>3.0.2</org.apache.cxf.version>
 	</properties>
 	<dependencies>
-		 <dependency>
+		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
 			<version>${org.apache.cxf.version}</version>
@@ -50,29 +47,25 @@
 			<artifactId>cglib-nodep</artifactId>
 			<version>2.2</version>
 		</dependency>
-		
-		 <!--  <dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.6.1</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.4.0</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency> 
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-		</dependency>  -->
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-core</artifactId> 
+			</dependency> <dependency> <groupId>org.springframework</groupId> <artifactId>spring-context</artifactId> 
+			</dependency> <dependency> <groupId>org.springframework</groupId> <artifactId>spring-web</artifactId> 
+			</dependency> <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-web</artifactId> 
+			</dependency> <dependency> <groupId>com.fasterxml.jackson.core</groupId> 
+			<artifactId>jackson-databind</artifactId> </dependency> -->
 		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-couchbase -->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
@@ -86,42 +79,18 @@
 			<version>1.9.13</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
 			<version>2.8.1</version>
 		</dependency>
- <dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-webmvc</artifactId>
-    <version>4.1.9.RELEASE</version>
-</dependency> 
-
-		<!-- <dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-		</dependency>
 		<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-assembly-plugin</artifactId>
-			<version>3.0.0</version>
-			<type>maven-plugin</type>
-		</dependency> -->
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>4.1.9.RELEASE</version>
+		</dependency>
+
+
 	</dependencies>
-
-	<!-- <build>
-	<plugins>
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-war-plugin</artifactId>
-			<version>3.1.0</version>
-			<configuration>
-				<webappDirectory>/sample/servlet/container/deploy/directory</webappDirectory>
-			</configuration>
-		</plugin>
-	</plugins>
-</build> -->
-
 
 </project>

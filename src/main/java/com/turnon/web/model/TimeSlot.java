@@ -8,8 +8,12 @@ import java.util.List;
 import org.joda.time.Hours;
 import org.joda.time.Minutes;
 
+import com.couchbase.client.java.repository.annotation.Field;
+
 public class TimeSlot {
+	@Field
     private DayOfWeek day;
+	@Field
     private List<Session> sessions;
     
     public DayOfWeek getDay() {

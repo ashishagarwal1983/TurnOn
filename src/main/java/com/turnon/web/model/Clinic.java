@@ -3,9 +3,12 @@ package com.turnon.web.model;
 import java.util.Arrays;
 import java.util.List;
 
+import com.couchbase.client.java.repository.annotation.Field;
+
 public class Clinic {
-    // String clinicName;
+	@Field
     private Address address;
+	@Field
     private List<TimeSlot> timeSlots;
 
     public Address getAddress() {

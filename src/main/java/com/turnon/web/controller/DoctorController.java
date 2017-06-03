@@ -7,16 +7,16 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.turnon.core.common.enums.Gender;
-import com.turnon.core.repo.UserRepository;
 import com.turnon.core.services.DoctorService;
-import com.turnon.core.services.UserService;
-import com.turnon.web.model.UserProfile;
+import com.turnon.web.model.DoctorProfile;
 
-@Path("/users")
+
+@RestController
+@Path("/doctor")
 @Produces("application/json")
 public class DoctorController {
     
@@ -27,30 +27,23 @@ public class DoctorController {
 	@Path("/test")
 	@GET
 	public String testMethod(){
-//		doctorService.
-//		UserRepository userRepository = context.getBean(UserRepository.class);
-//		BookRepo bookRepo = context.getBean(BookRepo.class);
-		UserProfile userProfile = new UserProfile();
-		userProfile.setAge(10);
-		userProfile.setGender(Gender.MALE);
-		userProfile.setMobileNumber("1111111");
-		userProfile.setUserId(111);
+		DoctorProfile doctorProfile = new DoctorProfile();
+		doctorProfile.setAge(10);
+		doctorProfile.setGender(Gender.MALE);
+		doctorProfile.setMobileNumber("8447157683");
+		doctorProfile.setUserId(111);
 
-		doctorService.registerDoctor(userProfile);
-		
-		return "Hello" + doctorService.getDoctorByMobile("1111111").get(0).getGender().toString();
-//		userRepository.save(userProfile);
-//			System.out.println(userRepository.findOne(111L).toString());
-		
+		doctorService.registerDoctor(doctorProfile);
+		return "Hello Doctor";
 		
 	}
 	
-	@Path("/profile/registerdoctor")
+	@Path("/register")
 	@POST
-	public void registerdoctor(com.turnon.web.model.UserProfile userProfile) throws IllegalAccessException, InvocationTargetException{
+	public void registerdoctor(com.turnon.web.model.DoctorProfile doctorProfile) throws IllegalAccessException, InvocationTargetException{
 //		com.turnon.db.model.DoctorProfile doctorModel = new com.turnon.db.model.DoctorProfile();
 //	    BeanUtils.copyProperties(doctorModel, doctorProfile);
-	    doctorService.registerDoctor(userProfile);
+	    doctorService.registerDoctor(doctorProfile);
 	}
 	
 //	@Path("/info/{mobile}/{category}")

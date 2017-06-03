@@ -17,16 +17,15 @@
 
 
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
-	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" /> 
-	
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
 	<couchbase:cluster>
 		<couchbase:node>127.0.0.1</couchbase:node>
 	</couchbase:cluster>
 
 	<!-- This is needed to probe the server for N1QL support -->
 	<!-- Can be either cluster credentials or a bucket credentials -->
-	<couchbase:clusterInfo login="turnon"
-		password="turnon" />
+	<couchbase:clusterInfo login="turnon" password="turnon" />
 
 	<bean id="couchbaseEnv"
 		class="com.couchbase.client.java.env.DefaultCouchbaseEnvironment"
@@ -40,11 +39,14 @@
 
 	<couchbase:template translation-service-ref="myCustomTranslationService" />
 
-	<couchbase:bucket bucketName="default"/>
+	<couchbase:bucket bucketName="default" />
 
 	<mvc:annotation-driven />
 	<context:component-scan base-package="com.turnon.*" />
 
+	<mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/" />
+	<mvc:resources mapping="/webjars/**"
+		location="classpath:/META-INF/resources/webjars/" />
 	<!-- <bean id="jsonProvider" class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider" 
 		/> <bean id="userController" class="com.turnon.web.controller.UsersController" 
 		/> -->
@@ -56,21 +58,24 @@
 		/> <couchbase:indexManager /> <couchbase:template translation-service-ref="myCustomTranslationService" 
 		/> <couchbase:bucket bucketName="turnon" bucketPassword="turnon" /> -->
 
-<jaxrs:server id="turnOn" address="/v1">
-	<jaxrs:providers>
-		<ref bean="jsonProvider" />
-	</jaxrs:providers>
+	<jaxrs:server id="turnOn" address="/v1">
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs:providers>
 
-	<jaxrs:serviceBeans>
-		<ref bean="doctorController" />
-	</jaxrs:serviceBeans>
-	<jaxrs:extensionMappings>
-		<entry key="xml" value="application/xml;charset=UTF-8" />
-		<entry key="json" value="application/json;charset=UTF-8" />
-	</jaxrs:extensionMappings>
-</jaxrs:server>
+		<jaxrs:serviceBeans>
+			<ref bean="doctorController" />
+			<ref bean="userController" />
+		</jaxrs:serviceBeans>
+		<jaxrs:extensionMappings>
+			<entry key="xml" value="application/xml;charset=UTF-8" />
+			<entry key="json" value="application/json;charset=UTF-8" />
+		</jaxrs:extensionMappings>
+	</jaxrs:server>
 
-<bean id="jsonProvider" class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider" />
-<bean id="doctorController" class="com.turnon.web.controller.DoctorController" />
+	<bean id="jsonProvider" class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider" />
+	<bean id="doctorController" class="com.turnon.web.controller.DoctorController" />
+	<bean id="userController" class="com.turnon.web.controller.UserController" />
+
 
 </beans>
